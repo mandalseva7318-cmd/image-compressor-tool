@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Image Compressor Tool</title>
+  <title>Smart Image Compressor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h1>Free Image Compressor Tool</h1>
-  <p>Compress JPG, PNG, WEBP images online free.</p>
+<div class="app">
 
-  <input type="file" id="upload" accept="image/*">
+  <h1>Smart Image Compressor Tool</h1>
 
-  <div class="preview-area">
-    <img id="preview" src="" alt="Preview">
+  <div class="top-controls">
+    <label>Compression Level</label>
+
+    <input type="range" id="qualityRange" min="10" max="90" value="60">
+
+    <span id="qualityValue">60%</span>
+
+    <button id="compressBtn">Compress</button>
+
+    <button id="deleteBtn">Delete All</button>
   </div>
 
-  <button id="compressBtn">Compress Image</button>
+  <div class="upload-area">
 
-  <a id="downloadBtn" style="display:none;">Download Compressed Image</a>
+    <div class="image-card" id="imageCard" style="display:none;">
+      <img id="previewImage">
+
+      <p id="oldSize"></p>
+      <p id="newSize"></p>
+
+      <a id="downloadBtn">Download</a>
+    </div>
+
+    <label class="upload-box">
+      <input type="file" id="upload" accept="image/*" hidden>
+      <span>Add Images</span>
+    </label>
+
+  </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
