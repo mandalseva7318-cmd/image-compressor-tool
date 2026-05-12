@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Image Compressor Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Free Image Compressor Tool</h1>
+  <p>Compress JPG, PNG, WEBP images online free.</p>
+
+  <input type="file" id="upload" accept="image/*">
+
+  <div class="preview-area">
+    <img id="preview" src="" alt="Preview">
+  </div>
+
+  <button id="compressBtn">Compress Image</button>
+
+  <a id="downloadBtn" style="display:none;">Download Compressed Image</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
