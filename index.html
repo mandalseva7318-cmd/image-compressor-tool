@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Image Compressor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="app">
+<div class="container">
 
-  <h1>Smart Image Compressor Tool</h1>
-
-  <div class="top-controls">
-    <label>Compression Level</label>
-
-    <input type="range" id="qualityRange" min="10" max="90" value="60">
-
-    <span id="qualityValue">60%</span>
-
-    <button id="compressBtn">Compress</button>
-
-    <button id="deleteBtn">Delete All</button>
+  <div class="topbar">
+    <h1>Smart Image Compressor</h1>
+    <p>Compress JPG, PNG & WEBP images instantly.</p>
   </div>
 
-  <div class="upload-area">
+  <div class="tool-box">
 
-    <div class="image-card" id="imageCard" style="display:none;">
-      <img id="previewImage">
+    <div class="controls">
 
-      <p id="oldSize"></p>
-      <p id="newSize"></p>
+      <div class="slider-box">
+        <label>Compression Level</label>
 
-      <a id="downloadBtn">Download</a>
+        <input type="range" min="10" max="90" value="60" id="qualityRange">
+
+        <span id="qualityValue">60%</span>
+      </div>
+
+      <button id="compressBtn">Compress</button>
+
+      <button id="clearBtn" class="danger">Delete All</button>
+
     </div>
 
-    <label class="upload-box">
-      <input type="file" id="upload" accept="image/*" hidden>
-      <span>Add Images</span>
-    </label>
+    <div class="workspace">
+
+      <div class="preview-card" id="previewCard">
+
+        <img id="previewImage" src="">
+
+        <div class="image-info">
+          <p id="oldSize"></p>
+          <p id="newSize"></p>
+        </div>
+
+        <a id="downloadBtn">Download Image</a>
+
+      </div>
+
+      <label class="upload-box">
+        <input type="file" hidden id="upload" accept="image/*">
+
+        <div>
+          <div class="plus">+</div>
+          <p>Add Images</p>
+        </div>
+      </label>
+
+    </div>
 
   </div>
 
@@ -47,5 +66,4 @@
 <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
 <script src="script.js"></script>
 
-</body>
 </html>
